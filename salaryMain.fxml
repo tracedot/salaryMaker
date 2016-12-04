@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="windowStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SalarySheet.SalaryMainController">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#newSalary" text="New Salary" />
+                  <MenuItem mnemonicParsing="false" onAction="#UpSalary" text="Modify Salary" />
+                  <MenuItem mnemonicParsing="false" onAction="#report" text="Print Monthly Salary" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newemployee" text="New imployee" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteData" text="Delete employee" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Administration">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#users" text="Add or Remove Users" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#About" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="331.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="83.0" prefWidth="600.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#report" prefHeight="26.0" prefWidth="170.0" text="Print Salary">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#newSalary" prefHeight="26.0" prefWidth="170.0" text="New Salary" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="57.0" prefWidth="600.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#newemployee" prefHeight="26.0" prefWidth="211.0" text="New or Modify employee">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

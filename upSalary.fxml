@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="background" stylesheets="@windowStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SalarySheet.UpSalaryController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <StackPane prefHeight="87.0" prefWidth="807.0">
+         <children>
+            <Label fx:id="notify" text="Modify Last 12 Months Data">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" prefHeight="352.0" prefWidth="807.0">
+         <children>
+            <VBox>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <children>
+                  <Label styleClass="label-info" text="Select Name" textFill="#0f96db">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="empl" prefHeight="323.0" prefWidth="179.0" />
+               </children>
+            </VBox>
+            <GridPane prefHeight="334.0" prefWidth="591.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="87.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="144.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="193.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="120.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="মূল বেতন:" />
+                  <Label text="বাড়ী ভাড়া:" GridPane.rowIndex="1" />
+                  <Label text="চিকিৎসা ভাতা:" GridPane.rowIndex="2" />
+                  <Label text="টিফিন ভাতা:" GridPane.rowIndex="3" />
+                  <Label text="শিক্ষা ভাতা:" GridPane.rowIndex="4" />
+                  <Label text="মহার্ঘ ভাতা:" GridPane.rowIndex="5" />
+                  <Label text="ধোলাই ভাতা:" GridPane.rowIndex="6" />
+                  <Label text="মোট বেতন:" GridPane.rowIndex="7" />
+                  <TextField fx:id="salaryBasicl" prefHeight="26.0" prefWidth="174.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="homel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="treatementl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="tiffinl" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="educationl" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="mohargol" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="washingl" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="salaryTotall" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="genwelfareFundl" GridPane.columnIndex="3" />
+                  <TextField fx:id="welfarefundl" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="genwelfarepaidl" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextField fx:id="genwelfarepaid1l" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <TextField fx:id="genwelfarepaid2l" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <TextField fx:id="homefaredeductl" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <TextField fx:id="homedeductadvinstalll" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <TextField fx:id="bikedeductl" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <Label prefHeight="20.0" prefWidth="129.0" text="সা: ভবি: তহবিল:" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="115.0" text="কল্যান তহবিল:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="194.0" text="১ম সা: ভবি: তহ: পরি:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="197.0" text="২ম সা: ভবি: তহ: পরি:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="194.0" text="৩য় সা: ভবি: তহ: পরি:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="192.0" text="বাড়ী ভাড়া কর্তন:" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="194.0" text="গৃহ নির্মান অগ্রীম কিস্ত:" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="192.0" text="মটরসাইকেল কর্তন:" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="139.0" text="গৃহ নির্মান:" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="154.0" text="১ম কিস্তি:" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="150.0" text="২য় কিস্তি:" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="156.0" text="৩য় কিস্তি:" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="homeConInstalll" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <TextField fx:id="firstInstallmentl" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <TextField fx:id="secInstallmentl" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                  <TextField fx:id="thrdInstallmentl" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+               </children>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </GridPane>
+            <VBox>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <children>
+                  <Label styleClass="label-info" text="Select Month" textFill="#0f96db">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="months" prefHeight="333.0" prefWidth="154.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="56.0" prefWidth="807.0">
+         <children>
+            <Label text="মোট কর্তন">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="totalDeductionl" />
+            <Label text="নীট দাবী">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="totalDemandl" />
+         </children>
+      </HBox>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="cancel" mnemonicParsing="false" onAction="#CancelButton" prefHeight="34.0" prefWidth="92.0" text="Cancel" />
+                  <Button mnemonicParsing="false" onAction="#Update" prefHeight="34.0" prefWidth="92.0" text="Update">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

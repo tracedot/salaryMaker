@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-06-12T12:10:19 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="salary2" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="988" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="15858efe-b074-441c-9e7d-61c73ad7afa9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SalarySheetData"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="c8651d87-9bee-4fc4-b4b4-6b7f0659ebe9">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SalarySheetData"/>
+		<parameter name="repDate" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select employee.emp_id,employee.emp_name,mainsalary.salary_basic,mainsalary.home_allowance,mainsalary.treatment_allowance,
+	mainsalary.tiffin_allowance,mainsalary.education_allowance,mainsalary.mohargo_allowance,mainsalary.washing_allowance,mainsalary.salaryTotal,
+    mainsalary.gen_welfare_fund,mainsalary.welfare_fund,mainsalary.gen_welfare_fund_paid,mainsalary.home_fare_deduct,
+    mainsalary.home_deduct_adv_installment,mainsalary.bike_deduct,mainsalary.salaryDate,employee.emp_post,employee.emp_work_place,
+    mainsalary.home_const_installment,mainsalary.first_installment,mainsalary.sec_installment,mainsalary.thrd_installment,mainsalary.total_deduction,mainsalary.total_demand,
+    mainsalary.gen_welfare_fund_paid_one,mainsalary.gen_welfare_fund_paid_two
+	from mainsalary INNER JOIN employee ON mainsalary.emp_id=employee.emp_id WHERE mainsalary.salaryDate LIKE '%$P!{repDate}' ORDER BY mainsalary.emp_id]]>
+		</queryString>
+		<field name="emp_id" class="java.lang.Integer"/>
+		<field name="emp_name" class="java.lang.String"/>
+		<field name="salary_basic" class="java.lang.Integer"/>
+		<field name="home_allowance" class="java.lang.Integer"/>
+		<field name="treatment_allowance" class="java.lang.Integer"/>
+		<field name="tiffin_allowance" class="java.lang.Integer"/>
+		<field name="education_allowance" class="java.lang.Integer"/>
+		<field name="mohargo_allowance" class="java.lang.Integer"/>
+		<field name="washing_allowance" class="java.lang.Integer"/>
+		<field name="salaryTotal" class="java.lang.Integer"/>
+		<field name="gen_welfare_fund" class="java.lang.Integer"/>
+		<field name="welfare_fund" class="java.lang.Integer"/>
+		<field name="gen_welfare_fund_paid" class="java.lang.Integer"/>
+		<field name="home_fare_deduct" class="java.lang.Integer"/>
+		<field name="home_deduct_adv_installment" class="java.lang.Integer"/>
+		<field name="bike_deduct" class="java.lang.Integer"/>
+		<field name="emp_post" class="java.lang.String"/>
+		<field name="emp_work_place" class="java.lang.String"/>
+		<field name="home_const_installment" class="java.lang.String"/>
+		<field name="first_installment" class="java.lang.String"/>
+		<field name="sec_installment" class="java.lang.String"/>
+		<field name="thrd_installment" class="java.lang.String"/>
+		<field name="total_deduction" class="java.lang.Integer"/>
+		<field name="total_demand" class="java.lang.Integer"/>
+		<field name="gen_welfare_fund_paid_one" class="java.lang.Integer"/>
+		<field name="gen_welfare_fund_paid_two" class="java.lang.Integer"/>
+		<variable name="salaryBasic" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{salary_basic}]]></variableExpression>
+		</variable>
+		<variable name="homeAllowance" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{home_allowance}]]></variableExpression>
+		</variable>
+		<variable name="treatmentAllowance" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{treatment_allowance}]]></variableExpression>
+		</variable>
+		<variable name="tiffinAllowance" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{tiffin_allowance}]]></variableExpression>
+		</variable>
+		<variable name="eduAllowance" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{education_allowance}]]></variableExpression>
+		</variable>
+		<variable name="mohargoAllowance" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{mohargo_allowance}]]></variableExpression>
+		</variable>
+		<variable name="washingAllowance" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{washing_allowance}]]></variableExpression>
+		</variable>
+		<variable name="salaryTotal" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{salaryTotal}]]></variableExpression>
+		</variable>
+		<variable name="genwelfarefund" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{gen_welfare_fund}]]></variableExpression>
+		</variable>
+		<variable name="welfareFund" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{welfare_fund}]]></variableExpression>
+		</variable>
+		<variable name="genWelFarePaid" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{gen_welfare_fund_paid}]]></variableExpression>
+		</variable>
+		<variable name="homefarededuct" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{home_fare_deduct}]]></variableExpression>
+		</variable>
+		<variable name="homededadvins" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{home_deduct_adv_installment}]]></variableExpression>
+		</variable>
+		<variable name="bikdeduct" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{bike_deduct}]]></variableExpression>
+		</variable>
+		<variable name="totalDeduct" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{total_deduction}]]></variableExpression>
+		</variable>
+		<variable name="totalDemand" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{total_demand}]]></variableExpression>
+		</variable>
+		<variable name="genWelFarePaid_1" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{gen_welfare_fund_paid_one}]]></variableExpression>
+		</variable>
+		<variable name="genWelFarePaid_2" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{gen_welfare_fund_paid_two}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="repDate" class="java.lang.String">
+		<parameterDescription><![CDATA[Get the Date]]></parameterDescription>
+		<defaultValueExpression><![CDATA[$P{REPORT_CONTEXT}.getParameterValues()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="displayDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Comments" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{Comments}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select employee.emp_id,employee.emp_name,mainsalary.salary_basic,mainsalary.home_allowance,mainsalary.treatment_allowance,
+	mainsalary.tiffin_allowance,mainsalary.education_allowance,mainsalary.mohargo_allowance,mainsalary.washing_allowance,
+    mainsalary.gen_welfare_fund,mainsalary.welfare_fund,mainsalary.gen_welfare_fund_paid,mainsalary.home_fare_deduct,mainsalary.home_deduct_adv_installment,mainsalary.bike_deduct,employee.home_fare_percent,mainsalary.salaryDate,employee.emp_post,employee.emp_work_place,employee.officePlace,
+    mainsalary.home_const_installment,mainsalary.first_installment,mainsalary.sec_installment,mainsalary.thrd_installment,mainsalary.total_deduction,mainsalary.total_demand,mainsalary.gen_welfare_fund_paid_one,mainsalary.gen_welfare_fund_paid_two
+	from mainsalary INNER JOIN employee ON mainsalary.emp_id=employee.emp_id WHERE mainsalary.salaryDate LIKE '%$P!{repDate}' ORDER BY mainsalary.emp_id]]>
+	</queryString>
+	<field name="emp_id" class="java.lang.Integer"/>
+	<field name="emp_name" class="java.lang.String"/>
+	<field name="salary_basic" class="java.lang.Integer"/>
+	<field name="home_allowance" class="java.lang.Integer"/>
+	<field name="treatment_allowance" class="java.lang.Integer"/>
+	<field name="tiffin_allowance" class="java.lang.Integer"/>
+	<field name="education_allowance" class="java.lang.Integer"/>
+	<field name="mohargo_allowance" class="java.lang.Integer"/>
+	<field name="washing_allowance" class="java.lang.Integer"/>
+	<field name="gen_welfare_fund" class="java.lang.Integer"/>
+	<field name="welfare_fund" class="java.lang.Integer"/>
+	<field name="gen_welfare_fund_paid" class="java.lang.Integer"/>
+	<field name="home_fare_deduct" class="java.lang.Integer"/>
+	<field name="home_deduct_adv_installment" class="java.lang.Integer"/>
+	<field name="bike_deduct" class="java.lang.Integer"/>
+	<field name="home_fare_percent" class="java.lang.String"/>
+	<field name="emp_work_place" class="java.lang.String"/>
+	<field name="officePlace" class="java.lang.String"/>
+	<field name="home_const_installment" class="java.lang.String"/>
+	<field name="first_installment" class="java.lang.String"/>
+	<field name="sec_installment" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="thrd_installment" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_deduction" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_demand" class="java.lang.Integer"/>
+	<field name="gen_welfare_fund_paid_one" class="java.lang.Integer"/>
+	<field name="gen_welfare_fund_paid_two" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="860" y="0" width="110" height="20" uuid="3036f760-4343-425e-a72e-bffac7042d99"/>
+				<textElement>
+					<font fontName="AdorshoLipi"/>
+				</textElement>
+				<textFieldExpression><![CDATA["তারিখ:"+String.valueOf($P{displayDate}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="184" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+			<componentElement>
+				<reportElement key="" stretchType="RelativeToTallestObject" x="0" y="7" width="980" height="163" uuid="28364556-291b-499b-bc73-c7d38d76ef47">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="10196f00-5d88-4913-b52b-3289f003cb0b">
+						<datasetParameter name="repDate">
+							<datasetParameterExpression><![CDATA[$P{repDate}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="28" uuid="a96db0e2-37b1-45d3-82fd-2d9a728b819f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="28" height="90" uuid="867d5097-ce24-4797-87ba-b8ae02d46eef"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[ক্র:নং]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="15"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField>
+								<reportElement x="0" y="0" width="28" height="30" uuid="a0fa4cc2-ecb7-458b-a500-4884fff3f8f1"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{emp_id}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="72" uuid="ea134fbf-c098-43c7-8783-b35a719be50b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+							<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+							<property name="com.jaspersoft.layout.grid.weight.fixed" value="true"/>
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="90" uuid="c1c44a8f-c08c-4009-b788-a60f361555e3"/>
+								<textElement textAlignment="Center" rotation="None">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[কমর্চারীর নাম]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1"/>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="72" height="30" isPrintWhenDetailOverflows="true" uuid="efea0985-3fe7-43e9-b456-23049f0cb2a1">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<textElement>
+									<font fontName="AdorshoLipi" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{emp_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="f0260ac1-d883-48a9-b5c9-3e49fe46173e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="90" uuid="a09b31f5-a9e6-4222-9433-ea3b8a827f58"/>
+								<textElement textAlignment="Center" rotation="None">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA["পদবী এবং কর্মস্থল"]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="40" uuid="d69cd32f-5e59-4d36-b12d-39fcc09fcee3"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[সর্বমোট]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="70" height="30" uuid="5c343d59-a1bf-47e3-8b1c-3c9858dda650"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{emp_post}+","+$F{emp_work_place}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="a31e9d2c-6009-45f3-a628-8c29342126fb">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="44" height="90" uuid="ed874570-0ffd-4059-8390-fbe3467a8ba7"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[মূলবেতন]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField>
+								<reportElement x="0" y="0" width="44" height="40" uuid="b77896b7-c063-4892-9c54-9c629c43a20a"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{salaryBasic}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="44" height="30" uuid="0d954429-34e1-464e-a4a8-190039939987"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{salary_basic}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="e2f09731-e4e5-49d5-b458-24a5b93ce22a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="90" uuid="eac12687-caec-4f55-a864-433bf0168a64"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[বাড়ী ভাড়া]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="40" uuid="15019538-d626-4ea4-8435-3b6eb8d1a1a4"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{homeAllowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="8c898b12-9854-4839-8563-4df9185f275c"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{home_allowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="026aa82c-e020-40de-8d61-7275d6a451fd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="90" uuid="94065dcc-8706-4756-bc43-ac508101da99"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[চিকিৎসা ভাতা]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="40" uuid="4dba422e-876c-4a6d-97ea-2f5baec4b7f0"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{treatmentAllowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="3725e691-bcae-4b66-a950-b3177a1f33a5"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{treatment_allowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="7c09cac0-1f96-4d7e-a7cd-788fe63ea220">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="90" uuid="97b699ec-1099-4397-bc5f-ff961b729c7c"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[টিফিন ভাতা]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="40" uuid="3b2c92d8-5878-4fb4-9761-cbf3c74314bb"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{tiffinAllowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="30" uuid="9b5a135c-5036-46e9-90a6-4bff35cd1849"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{tiffin_allowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="39" uuid="f107cbf0-0538-48bc-9b8f-aa063110e732">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="39" height="90" uuid="daf1a5f7-8c72-4cf7-9565-e602d8621d08"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[শিক্ষা ভাতা]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="40" uuid="ac159236-9118-498b-a7fd-c68b62eab33a"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{eduAllowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="30" uuid="dd3d19aa-69fe-4b6e-b2de-fdf9e4cae691"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{education_allowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="39" uuid="453850d5-4d6c-4cac-983f-0c73810fab3c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="39" height="90" uuid="1efeddc4-371f-4054-9c29-bc2297840e18"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[মহার্ঘ ভাতা]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="40" uuid="e997b320-a231-44a3-96d2-3d7c1cf590b5"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{mohargoAllowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="30" uuid="ebef9ec2-b12d-43a0-8a1e-8cc360fab171"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{mohargo_allowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="36" uuid="21c02772-b73a-4337-a820-b140a6f1593f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="36" height="90" uuid="6f97eb2c-a56f-455b-852e-40db67b3d5cb"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[ধোলাই ভাতা]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="36" height="40" uuid="0f1e1bf9-7e87-4434-809b-91cad74ff7e4"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{washingAllowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="36" height="30" uuid="776cc25c-6af1-45e4-b2f8-ef195bf607a5"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{washing_allowance}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="39" uuid="b7b6ddaf-1fbf-4be1-a69f-b7484ef1d1df">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column11"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="39" height="90" uuid="46fac223-64d3-40a4-a792-37a371d59c5d"/>
+								<textElement textAlignment="Center">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[সর্বমোট]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="40" uuid="acbd2e55-57aa-4984-acdb-c2d736608186"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{salaryTotal}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="39" height="30" uuid="b867df60-ce98-43e9-95c5-4e23ee09856c"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{salaryTotal}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="37" uuid="cdbd652f-c223-4e67-afed-c90d4b45973e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column12"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="37" height="90" uuid="8446c71d-2899-452d-8d84-c4fa173428c6"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[সাধারণ ভবিষ্যৎ তহবিল]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="40" uuid="e7760350-0194-424b-86c8-55e04f94c76e"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{genwelfarefund}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="30" uuid="6a4c601d-e403-4a39-9adc-f3d3838b3d84"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{gen_welfare_fund}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="37" uuid="455eebbb-3adf-4bbe-b496-1aff37734036">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column13"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="37" height="90" uuid="64a4cf47-622d-4042-be5b-5d7673c1794e"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[কল্যান তহবিল]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="40" uuid="7d4a8837-c3cf-42b8-9481-26643eec185b"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{welfareFund}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="30" uuid="1a03c376-95ef-4936-8a0e-ba20cad0d13c"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{welfare_fund}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="37" uuid="bea91e7b-0979-4f3e-b085-40b0f088b724">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column14"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="37" height="90" uuid="629ec864-c699-4f56-a8ac-81d007660ffb"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[১ম সাধারণ ভবিষ্যৎ তহবিল পরিশোধ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="40" uuid="3f8420c8-40a5-47be-82cc-8fded1361162"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{genWelFarePaid}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="30" uuid="48526f1f-063d-49e5-8647-18a5571d865d"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{gen_welfare_fund_paid}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="37" uuid="323c6072-b76d-4d80-94ca-dbd22e48f2e7">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column15"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="37" height="90" uuid="05a09a0f-97a8-4765-8758-1bda9b477987"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi"/>
+								</textElement>
+								<text><![CDATA[২য় সাধারণ ভবিষ্যৎ তহবিল পরিশোধ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="40" uuid="bf725ca7-b7ce-4435-bc7c-1274778b7d5c"/>
+								<textElement markup="styled">
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{genWelFarePaid_1}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="30" uuid="f3c1a56a-5143-4d7f-be55-bee64a22f62b"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{gen_welfare_fund_paid_one}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="38" uuid="a83a427e-f1b7-4127-bd1c-f7eb18ea467d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column16"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="38" height="90" uuid="095d968c-adc6-4902-9468-90b8b7d687bb"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi"/>
+								</textElement>
+								<text><![CDATA[৩য় সাধারণ ভবিষ্যৎ তহবিল পরিশোধ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="38" height="40" uuid="faf866b9-ad49-41cb-8d3f-dacb2bcf5f28"/>
+								<textElement markup="styled">
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{genWelFarePaid_2}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="38" height="30" uuid="a80fac28-4480-4552-8f10-5445063df75b"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{gen_welfare_fund_paid_two}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="28" uuid="1d602669-b84d-4101-ba7e-a2a0e479ed9b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column17"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="28" height="90" uuid="ca201940-e081-459d-b503-f3d218aec2f8"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[বাড়ী ভাড়া কর্তণ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="28" height="40" uuid="e7c5e634-a755-4078-9370-2e35958c6550"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{homefarededuct}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="28" height="30" uuid="091f9b2c-11c9-484f-9445-3e8e1f13137b"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{home_fare_deduct}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="841fbd2e-4daa-4a0a-a717-e18489213143">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column18"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="90" uuid="ab3ae079-646a-41f7-8073-34cf20197122"/>
+								<textElement rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[গৃহ নির্মান অগ্রিম কিস্তি]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="40" uuid="2b321875-ec86-4243-80fa-a62bcec5e3b5"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{homededadvins}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="55e99de6-404c-41a1-b0d3-ba74de66fd76"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{home_deduct_adv_installment}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="34" uuid="05a4e6ae-3836-48c7-845f-7963f0ba584a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column19"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="34" height="90" uuid="80959788-4e40-4931-bc79-dae035075cdf"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[মটর সাইকেল কর্তন]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="40" uuid="7eca2112-fb27-466f-8684-55ecb546f108"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{bikdeduct}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="30" uuid="6eb6d378-b118-4fc4-8faa-f9fb46c7311f"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{bike_deduct}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="34" uuid="e9ea05fc-93fc-4b27-9fb8-e65b1a9eec39">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column20"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="34" height="90" uuid="79a559ae-351e-460c-b42d-4b40efada030"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[গৃহ নির্মান]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="40" uuid="066554e3-a847-4771-884d-4b950f5a5e01"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA["-"]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="30" uuid="d72f1ae9-1a5b-4308-87e6-304a03b48b90"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{home_const_installment}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="34" uuid="dfcabbe2-aab1-41ec-9f9d-8d71a36eb868">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column21"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="34" height="90" uuid="da9ee4df-e877-46ce-b338-0f888c981bf4"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[১ম কিস্তি]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="40" uuid="5095116a-2cb0-48fd-b6c6-9c14e444fa0d"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA["-"]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="30" uuid="83e5f6ee-8465-4ad7-851f-3fd88457be0c"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{first_installment}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="34" uuid="3c077caa-637c-452d-9261-eb95f1ae17e4">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column22"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="34" height="90" uuid="588425bc-c401-4894-97c0-4c40f594f03d"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[২য় কিস্তি]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="40" uuid="cfb11c31-1292-49ff-8dee-c10cdd1e2ca7"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA["-"]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="34" height="30" uuid="f5d4d188-9b1a-4550-8a6e-285934ceab7a"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{sec_installment}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="23" uuid="8a11e76b-1e3d-4c04-a397-d61fe1aab8ba">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column23"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="23" height="90" uuid="c52680a6-d26e-47da-93cb-3e429455e7dc"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[৩য় কিস্তি]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="23" height="40" uuid="cdc8e0bc-a9dc-4826-b23f-e48f4129542f"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA["-"]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="23" height="30" uuid="3a817c72-b500-46c5-8a87-5fcf4c3170d4"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{thrd_installment}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="39" uuid="43c5bc78-74e8-4a8d-9113-6cb2747c522b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column24"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="39" height="90" uuid="a6c1e935-95e9-4d21-b2d8-64d0bfba1902"/>
+								<textElement textAlignment="Center" rotation="Right">
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[মোট কর্তন ও আদায়]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="40" uuid="2b61cab3-85d6-4722-8d1d-c6456ec8c066"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{totalDeduct}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="30" uuid="64fd01dc-16be-474f-a4ab-7f1e54ff57d6"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{total_deduction}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="39" uuid="8db2dd88-7073-4fdf-87c1-2ddc29eea2d6">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column25"/>
+						<jr:columnHeader style="Table 1_CH" height="90" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="39" height="90" uuid="3ba16f8e-343c-4fd3-bf58-7ebb1a315ab5"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="10"/>
+								</textElement>
+								<text><![CDATA[নীট দাবী]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="40" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="39" height="40" uuid="09a9987d-7a6c-4824-84a4-767575e434c8"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($V{totalDemand}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="39" height="30" uuid="197af97d-7e64-45cb-9794-d72e5ca6e375"/>
+								<textElement>
+									<font fontName="AdorshoLipi" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[String.valueOf($F{total_demand}).replaceAll("0","০").replaceAll("1","১").replaceAll("2","২").replaceAll("3","৩").replaceAll("4","৪").replaceAll("5","৫").replaceAll("6","৬").replaceAll("7","৭").replaceAll("8","৮").replaceAll("9","৯")]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="49" splitType="Stretch">
+			<line>
+				<reportElement x="630" y="24" width="150" height="1" uuid="a5e3425e-a108-4fa8-84c5-72288f0bc9e8"/>
+			</line>
+			<textField>
+				<reportElement x="811" y="18" width="100" height="30" uuid="3680d6ed-00ce-409a-a6f8-3f31841d1ee1"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="911" y="18" width="100" height="30" uuid="74190948-8764-4eca-92ff-90a470d83573"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" / " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

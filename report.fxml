@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="445.0" prefWidth="600.0" styleClass="background" stylesheets="@windowStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SalarySheet.ReportController">
+   <children>
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="485.0" prefWidth="600.0">
+               <children>
+                  <VBox layoutX="335.0" layoutY="88.0" prefHeight="312.0" prefWidth="225.0">
+                     <children>
+                        <Label styleClass="label-info" text="Months to Load:" textFill="#176ae7">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <ListView fx:id="listView" prefHeight="291.0" prefWidth="220.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="58.0" layoutY="146.0" prefHeight="211.0" prefWidth="242.0">
+                     <children>
+                        <Label text="Please Enter Salary Year:" textFill="#176ae7">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="viewReport" promptText="Enter Year">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Print Date(Optional):" textFill="#176ae7">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="displayDate" promptText="d/m/yyyy">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Comments:">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" promptText="কিছু নাই?" />
+                     </children>
+                  </VBox>
+                  <Label layoutX="157.0" layoutY="14.0" prefHeight="37.0" styleClass="label-extra" text="Salary Sheet by Year &amp; Months" textFill="#c614a5" underline="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="179.0" layoutY="43.0" styleClass="label-alert" text="Double Click on Month to Open" textFill="#f80a0a" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</VBox>

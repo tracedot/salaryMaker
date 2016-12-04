@@ -1,0 +1,54 @@
+.background {
+    -fx-background-color: darkseagreen;
+}
+
+.button{
+    -fx-border-color: darkblue;
+
+}
+
+.label{
+    -fx-text-fill: black;
+    -fx-font-size: 12pt;
+
+}
+
+.label-alert{
+    -fx-text-fill: firebrick;
+    -fx-font-size: 11.5pt;
+    -fx-font-weight: bold;
+
+
+}
+
+.label-header{
+    -fx-text-fill: brown;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+.label-info{
+    -fx-text-fill: aqua;
+    -fx-font-size: 11.5pt;
+    -fx-font-weight: bold;
+}
+.label-extra2{
+    -fx-font-size: 13pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.label-extra{
+
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+.button{
+    -fx-background-color: black;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+}
+.button:hover{
+    -fx-background-color: dimgray;
+}
+
